@@ -491,9 +491,9 @@ module fairygui {
         }
 
         public cancelDragging(): void {
-            this._owner.displayObject.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.__touchMove, this);
-            this._owner.displayObject.removeEventListener(egret.TouchEvent.TOUCH_END, this.__touchEnd, this);
-            this._owner.displayObject.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.__touchTap, this);
+            this._owner.displayObject.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.__touchMove, this);
+            this._owner.displayObject.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.__touchEnd, this);
+            this._owner.displayObject.stage.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.__touchTap, this);
 
             if (ScrollPane.draggingPane == this)
                 ScrollPane.draggingPane = null;
